@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parking Automobilité — Parking privé haut de gamme à Grenoble</title>
+  <meta name="description" content="Parking Automobilité, avenue Léon Blum à Grenoble : 518 places sur 7 niveaux, box sécurisés, accès 24/7, toiture photovoltaïque de 1 940 m². Réservez votre place." />
+  <meta name="theme-color" content="#0b0c10" />
+  <link rel="icon" href="data:," />
+
+  <meta property="og:title" content="Parking Automobilité — Grenoble" />
+  <meta property="og:description" content="518 places sécurisées sur 7 niveaux, avenue Léon Blum à Grenoble. Parking privé avec toiture photovoltaïque." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <a href="#top" class="logo">Parking <strong>Automobilité</strong></a>
+    <nav aria-label="Navigation principale">
+      <a href="#offre">L'offre</a>
+      <a href="#parking-vert">Parking vert</a>
+      <a href="#atouts">Atouts</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-ghost header-cta" href="tel:+33476233337">04 76 23 33 37</a>
+  </header>
+
+  <main id="top">
+    <!-- ============================================================ -->
+    <!-- SCÈNE 3D SCROLLYTELLING                                      -->
+    <!-- La hauteur de #scene-scroll détermine la longueur du scroll  -->
+    <!-- utilisée par ScrollTrigger (voir src/scroll.js).             -->
+    <!-- ============================================================ -->
+    <section id="scene-scroll" aria-label="Visite animée du bâtiment en 3D">
+      <div id="scene-pin">
+        <canvas id="webgl" aria-hidden="true"></canvas>
+
+        <div id="scene-loader" role="status" aria-live="polite">
+          <div class="loader-bar"><span></span></div>
+          <p>Construction du bâtiment…</p>
+        </div>
+
+        <!-- Cartes de texte en surimpression, une par phase de la timeline -->
+        <div class="story-card" data-phase="0">
+          <h1>Parking Automobilité</h1>
+          <p>Un parking privé haut de gamme, avenue Léon Blum à Grenoble.</p>
+        </div>
+
+        <div class="story-card" data-phase="1">
+          <h2>7 niveaux, 518 places</h2>
+          <p>Une structure béton et verre qui s'élève au cœur de la zone industrielle grenobloise.</p>
+        </div>
+
+        <div class="story-card" data-phase="2">
+          <h2>Une rampe hélicoïdale centrale</h2>
+          <p>La circulation des véhicules suit une spirale continue, du rez-de-chaussée jusqu'au 7ᵉ niveau.</p>
+        </div>
+
+        <div class="story-card" data-phase="3">
+          <h2>Un parking vert</h2>
+          <p>1 940 m² de panneaux photovoltaïques et une terrasse végétalisée en toiture.</p>
+        </div>
+
+        <div class="story-card" data-phase="4">
+          <h2>Une salle de réunion vitrée</h2>
+          <p>Au dernier niveau, un espace de travail baigné de lumière et ouvert sur les montagnes.</p>
+        </div>
+
+        <div class="story-card story-card--final" data-phase="5">
+          <h2>Vue panoramique sur le massif de Belledonne</h2>
+          <p>Réservez votre place dans le parking le plus vert de Grenoble.</p>
+          <div class="cta-group">
+            <a class="btn btn-primary" href="tel:+33476233337">
+              <span aria-hidden="true">📞</span> Appeler le 04 76 23 33 37
+            </a>
+            <a class="btn btn-secondary" href="mailto:direction@automobilite.com">
+              Nous contacter par e-mail
+            </a>
+          </div>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true">
+          <span>Scrollez</span>
+          <div class="scroll-hint-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CONTENU SEO — lisible sans JS / sans WebGL                    -->
+    <!-- ============================================================ -->
+    <div id="contenu">
+      <section id="offre" class="section" aria-labelledby="offre-titre">
+        <div class="section-inner">
+          <p class="eyebrow">L'offre</p>
+          <h2 id="offre-titre">Un parking pensé pour votre véhicule</h2>
+          <div class="grid-cards">
+            <article class="card">
+              <h3>518 places sur 7 niveaux</h3>
+              <p>Places standard et box privatifs sécurisés, répartis sur 7 plateaux largement vitrés et naturellement ventilés.</p>
+            </article>
+            <article class="card">
+              <h3>Box &amp; « Boxland »</h3>
+              <p>Espaces de stockage et box fermés en entresol pour véhicules de collection, deux-roues ou stockage longue durée.</p>
+            </article>
+            <article class="card">
+              <h3>Sécurité &amp; contrôle d'accès</h3>
+              <p>Barrières levantes, vidéosurveillance et badge d'accès individuel pour une tranquillité totale.</p>
+            </article>
+            <article class="card">
+              <h3>Accès 24 heures / 24</h3>
+              <p>Entrée et sortie libres à toute heure, avec rampe hélicoïdale centrale reliant tous les niveaux.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="parking-vert" class="section section--alt" aria-labelledby="vert-titre">
+        <div class="section-inner">
+          <p class="eyebrow">Engagement environnemental</p>
+          <h2 id="vert-titre">Le parking le plus vert de Grenoble</h2>
+          <div class="grid-two">
+            <div>
+              <p>La toiture du bâtiment accueille une centrale photovoltaïque de <strong>1 940 m²</strong>, produisant une électricité renouvelable réinjectée sur site, complétée par une terrasse végétalisée qui limite l'îlot de chaleur et favorise la biodiversité locale.</p>
+              <ul class="check-list">
+                <li>Centrale photovoltaïque en toiture (1 940 m²)</li>
+                <li>Terrasse végétalisée et gestion des eaux pluviales</li>
+                <li>Façades largement vitrées limitant l'éclairage artificiel</li>
+                <li>Structure béton et acier durable, conçue avec l'architecte Jean-Marc Mathieu</li>
+              </ul>
+            </div>
+            <figure class="figure-placeholder" role="img" aria-label="Illustration de la toiture photovoltaïque et de la terrasse végétalisée du parking">
+              <span>🌱 ☀️</span>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="atouts" class="section" aria-labelledby="atouts-titre">
+        <div class="section-inner">
+          <p class="eyebrow">Points forts</p>
+          <h2 id="atouts-titre">Pourquoi choisir Parking Automobilité</h2>
+          <div class="grid-cards grid-cards--4">
+            <article class="card"><h3>32 m</h3><p>de hauteur, 7 niveaux de stationnement au-dessus d'un rez-de-chaussée technique.</p></article>
+            <article class="card"><h3>518</h3><p>véhicules accueillis, places standard et box sécurisés.</p></article>
+            <article class="card"><h3>1 940 m²</h3><p>de panneaux solaires en toiture-terrasse.</p></article>
+            <article class="card"><h3>24/7</h3><p>accès libre par badge, rampe hélicoïdale continue.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section section--contact" aria-labelledby="contact-titre">
+        <div class="section-inner">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-titre">Réservez votre place</h2>
+          <p>92 avenue Léon Blum, 38100 Grenoble — Lotissement Alstom</p>
+          <div class="cta-group">
+            <a class="btn btn-primary" href="tel:+33476233337">
+              <span aria-hidden="true">📞</span> 04 76 23 33 37
+            </a>
+            <a class="btn btn-secondary" href="mailto:direction@automobilite.com">
+              direction@automobilite.com
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Parking Automobilité — 92 avenue Léon Blum, 38100 Grenoble</p>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
