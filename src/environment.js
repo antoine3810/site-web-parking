@@ -60,7 +60,7 @@ export async function setupLighting(renderer, scene) {
   let envTexture = null;
   try {
     const hdrLoader = new HDRLoader();
-    const texture = await hdrLoader.loadAsync("/hdri/env.hdr");
+    const texture = await hdrLoader.loadAsync("hdri/env.hdr");
     envTexture = pmrem.fromEquirectangular(texture).texture;
     texture.dispose();
   } catch (err) {
@@ -201,7 +201,7 @@ function buildMountainBackdrop() {
   // pour que l'horizon de la photo tombe à peu près où la caméra regarde.
   mesh.position.set(0, 28, -260);
 
-  new THREE.TextureLoader().load("/images/panorama-belledonne.jpg", (texture) => {
+  new THREE.TextureLoader().load("images/panorama-belledonne.jpg", (texture) => {
     texture.colorSpace = THREE.SRGBColorSpace;
     material.map = texture;
     material.color.set(0xffffff);

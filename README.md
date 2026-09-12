@@ -75,7 +75,7 @@ ou `.fbx`/`.obj` converti en `.glb` via Blender) :
    import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
    const loader = new GLTFLoader();
-   const gltf = await loader.loadAsync("/models/batiment.glb");
+   const gltf = await loader.loadAsync("models/batiment.glb");
    const building = gltf.scene;
    scene.add(building);
    // centre le modèle et applique une échelle si besoin :
