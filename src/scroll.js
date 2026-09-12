@@ -59,7 +59,7 @@ function cameraKeyframes() {
     { p: 0.55, pos: [w * 1.05, h * 0.85, d * 1.15], look: [0, h * 0.55, 0] },
     { p: 0.72, pos: [w * 0.35, h + 9, d * 0.15], look: [0, h + 1, 0] },
     // La terrasse et la salle de réunion regardent vers -Z (nord), côté où
-    // sont placées les montagnes (voir buildMountains). Au point p=1.0 la
+    // sont placées les montagnes (voir buildMountainBackdrop). Au point p=1.0 la
     // caméra est déjà au-delà du bord du bâtiment (au-dessus de son sommet)
     // pour ne jamais "plonger" dans la structure centrale (rampe/atrium).
     { p: 0.88, pos: [-w * 0.22, h + 4, -d * 0.28], look: [-w * 0.15, h + 2.5, -d * 0.75] },

@@ -174,39 +174,39 @@ export function buildContext(scene) {
     group.add(b);
   }
 
-  // Silhouette des montagnes (massifs grenoblois) en fond, faible poly, fondu dans le fog.
-  group.add(buildMountains());
+  // Massif de Belledonne en fond : vraie photo panoramique (voir README).
+  group.add(buildMountainBackdrop());
 
   scene.add(group);
   return group;
 }
 
-function buildMountains() {
-  const group = new THREE.Group();
-  const mat = new THREE.MeshStandardMaterial({
-    color: 0x9fb2c9,
-    roughness: 1,
-    fog: true,
+/**
+ * Toile de fond photographique du massif de Belledonne, vue depuis le
+ * site (public/images/panorama-belledonne.jpg — voir README pour la
+ * remplacer). Un grand plan texturé et non éclairé (MeshBasicMaterial),
+ * placé loin derrière le bâtiment ; `fog: false` car la photo porte déjà
+ * sa propre brume atmosphérique — le brouillard procédural de la scène
+ * la laverait sinon en une flaque de couleur unie à cette distance.
+ */
+function buildMountainBackdrop() {
+  const photoWidth = 1000;
+  const photoHeight = 562;
+  const planeWidth = 1100;
+  const planeHeight = planeWidth * (photoHeight / photoWidth);
+
+  const material = new THREE.MeshBasicMaterial({ color: 0xdfe6ea, fog: false });
+  const mesh = new THREE.Mesh(new THREE.PlaneGeometry(planeWidth, planeHeight), material);
+  // Centré vers l'altitude moyenne des prises de vue de la caméra (4 -> 41 m)
+  // pour que l'horizon de la photo tombe à peu près où la caméra regarde.
+  mesh.position.set(0, 28, -260);
+
+  new THREE.TextureLoader().load("/images/panorama-belledonne.jpg", (texture) => {
+    texture.colorSpace = THREE.SRGBColorSpace;
+    material.map = texture;
+    material.color.set(0xffffff);
+    material.needsUpdate = true;
   });
-  const ridgeCount = 5;
-  for (let i = 0; i < ridgeCount; i++) {
-    const points = [];
-    const segs = 10;
-    const baseY = 20 + i * 6;
-    for (let s = 0; s <= segs; s++) {
-      const x = (s / segs) * 400 - 200;
-      const y = baseY + Math.sin(s * 1.3 + i) * 14 + Math.sin(s * 0.4 + i * 3) * 10;
-      points.push(new THREE.Vector2(x, y));
-    }
-    points.unshift(new THREE.Vector2(-200, 0));
-    points.push(new THREE.Vector2(200, 0));
-    const shape = new THREE.Shape(points);
-    const geo = new THREE.ShapeGeometry(shape);
-    const mesh = new THREE.Mesh(geo, mat.clone());
-    mesh.material.color.offsetHSL(0, 0, -i * 0.05);
-    mesh.position.z = -150 - i * 35;
-    mesh.position.y = -2;
-    group.add(mesh);
-  }
-  return group;
+
+  return mesh;
 }

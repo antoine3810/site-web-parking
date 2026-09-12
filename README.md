@@ -34,6 +34,17 @@ fourni (voir ci-dessous).
 
 ## Où mettre les assets réels (facultatif, pour aller plus loin)
 
+### Photo panoramique des montagnes (déjà en place)
+
+`public/images/panorama-belledonne.jpg` est une vraie photo du massif de
+Belledonne, utilisée comme toile de fond (voir `buildMountainBackdrop()`
+dans `src/environment.js`) à la place d'une silhouette procédurale. Pour
+la remplacer par une autre photo, dépose une nouvelle image au même
+chemin (idéalement un format large, ~16:9 à 2:1) — les dimensions
+`photoWidth`/`photoHeight` en haut de `buildMountainBackdrop()` servent
+uniquement à calculer le bon ratio d'affichage du plan 3D, ajuste-les si
+la nouvelle photo a un ratio différent.
+
 ### HDRI (éclairage image-based, reflets réalistes)
 
 Dépose un fichier HDRI libre au format `.hdr` dans :

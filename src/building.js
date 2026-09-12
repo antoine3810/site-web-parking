@@ -312,7 +312,7 @@ function buildRooftop(y, materials) {
   slab.castShadow = true;
   group.add(slab);
 
-  // Terrasse végétalisée, côté nord — face aux montagnes (voir buildMountains
+  // Terrasse végétalisée, côté nord — face aux montagnes (voir buildMountainBackdrop
   // dans environment.js, placées en -Z pour le panorama final).
   const vegetal = new THREE.Mesh(
     new THREE.BoxGeometry(width * 0.9, 0.12, depth * 0.35),
